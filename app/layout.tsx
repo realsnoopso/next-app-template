@@ -7,7 +7,7 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import Providers from "./providers";
 
 export const metadata: Metadata = {

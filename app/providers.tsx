@@ -1,6 +1,6 @@
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import { OverlayProvider } from "@/components/providers/OverlayProvider";
-import { QueryClientProvider } from "@/components/providers/QueryClientProvider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { OverlayProvider } from "@/components/providers/overlay-provider";
+import { QueryClientProvider } from "@/components/providers/query-client-provider";
 import { Toaster } from "@/components/ui/toaster";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
