@@ -10,7 +10,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <>
       <QueryClientProvider>
-        <ThemeProvider defaultTheme="system" enableSystem>
+        <ThemeProvider enableSystem attribute="class">
           <OverlayProvider>
             {children}
             <Toaster />
