@@ -1,44 +1,69 @@
 import { ColumnDef } from "@tanstack/react-table";
+import { ModelScore } from "./page.types";
 
-type Payment = {
-  id: string;
-  amount: number;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
-};
-
-export const payments: Payment[] = [
+export const modelScores: ModelScore[] = [
   {
-    id: "728ed52f",
-    amount: 100,
-    status: "pending",
-    email: "m@example.com",
+    model: "GPT-3",
+    inference: 0.8,
+    math: 0.9,
+    writing: 0.7,
+    reading: 0.6,
+    grammar: 0.8,
+    singleTurn: 0.9,
+    multiTurn: 0.8,
+    total: 0.8,
   },
-  {
-    id: "489e1d42",
-    amount: 125,
-    status: "processing",
-    email: "example@gmail.com",
-  },
-  // ...
 ];
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<ModelScore>[] = [
   {
-    accessorKey: "status",
-    header: "Status",
+    accessorKey: "model",
+    header: "모델",
   },
   {
-    accessorKey: "amount",
-    header: () => <div className="text-right">Amount</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
+    accessorKey: "inference",
+    header: "추론",
+  },
+  {
+    accessorKey: "math",
+    header: "수학",
+  },
+  {
+    accessorKey: "writing",
+    header: "글쓰기",
+  },
+  {
+    accessorKey: "reading",
+    header: "이해",
+  },
+  {
+    accessorKey: "grammar",
+    header: "문법",
+  },
+  {
+    accessorKey: "singleTurn",
+    header: "싱글턴",
+  },
+  {
+    accessorKey: "multiTurn",
+    header: "멀티턴",
+  },
+  {
+    accessorKey: "total",
+    header: "총점",
+  },
 
-      return <div className="text-right font-medium">{formatted}</div>;
-    },
-  },
+  // {
+  //   accessorKey: "total",
+  //   header: () => <div className="text-right">Total</div>,
+  //   cell: ({ row }) => {
+  //     const amount = parseFloat(row.getValue("amount"));
+  //     const formatted = new Intl.NumberFormat("en-US", {
+  //       style: "currency",
+  //       currency: "USD",
+  //     }).format(amount);
+
+  //     return <div className="text-right font-medium">{formatted}</div>;
+  //   },
+  // },
 ];
